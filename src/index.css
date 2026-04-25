@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-moss-dark: #0a0e0a;
+  --color-moss-green: #1a241b;
+  --color-blood: #4a0404;
+  --color-lavender-dark: #2b2230;
+  --color-parchment: #e2dcd3;
+  --color-gold-muted: #bd9b60;
+}
+
+body {
+  background-color: var(--color-moss-dark);
+  color: var(--color-parchment);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+/* Atmospheric effects */
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(26, 36, 27, 0.4) 0%, transparent 60%),
+    radial-gradient(circle at 10% 80%, rgba(43, 34, 48, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 90% 100%, rgba(74, 4, 4, 0.15) 0%, transparent 50%);
+  filter: blur(40px);
+  z-index: 0;
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  z-index: 10;
+  mix-blend-mode: overlay;
+}
+
+.glass-panel {
+  background: rgba(20, 20, 20, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 220, 211, 0.05);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(226, 220, 211, 0.2);
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.text-glow-blood {
+  animation: pulse-blood 5s ease-in-out infinite;
+}
+
+.text-glow-lavender {
+  animation: pulse-lavender 6s ease-in-out infinite;
+}
+
+.text-shimmer {
+  animation: text-shimmer 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { text-shadow: 0 0 10px rgba(226, 220, 211, 0.2); }
+  50% { text-shadow: 0 0 25px rgba(226, 220, 211, 0.5); }
+}
+
+@keyframes pulse-blood {
+  0%, 100% { text-shadow: 0 0 15px rgba(74, 4, 4, 0.4); }
+  50% { text-shadow: 0 0 35px rgba(211, 74, 74, 0.7); }
+}
+
+@keyframes pulse-lavender {
+  0%, 100% { text-shadow: 0 0 15px rgba(43, 34, 48, 0.5); }
+  50% { text-shadow: 0 0 35px rgba(180, 150, 220, 0.7); }
+}
+
+@keyframes text-shimmer {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; text-shadow: 0 0 8px rgba(189, 155, 96, 0.4); }
+}
+
+.ornate-border {
+  border: 1px solid rgba(189, 155, 96, 0.2);
+  position: relative;
+}
+
+.ornate-border::before, .ornate-border::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border: 1px solid rgba(189, 155, 96, 0.4);
+}
+
+.ornate-border::before {
+  top: -3px; left: -3px;
+}
+
+.ornate-border::after {
+  bottom: -3px; right: -3px;
+}
