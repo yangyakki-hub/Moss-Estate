@@ -159,6 +159,10 @@ export default function App() {
                   <span className="text-parchment font-bold mr-3">▪</span>
                   <div><strong className="text-parchment font-medium">레노어의 방:</strong> 중앙 계단 옆의 감시초소. 저택의 오가는 모든 이를 지켜봄.</div>
                 </li>
+                <li className="flex items-start">
+                  <span className="text-gold-muted mr-3">▪</span>
+                  <div><strong className="text-parchment font-medium">마부의 방:</strong> 본채와 연결된 낮은 별채. 레노어의 감시의 사각지대.</div>
+                </li>
               </ul>
             </FadeIn>
 
