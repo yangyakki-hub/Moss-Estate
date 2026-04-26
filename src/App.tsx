@@ -292,7 +292,7 @@ export default function App() {
                     <div>
                       <h4 className="text-xs uppercase tracking-widest mb-3 opacity-50 border-b border-parchment/10 pb-2">Appearance</h4>
                       <p className="text-sm font-light text-parchment/80 leading-relaxed">
-                        밝은 금발을 낮게 양갈래로 묶었고, 살짝 치켜올라간 매혹적인 붉은 눈동자를 가졌다. 아담하지만 육감적이고 건강한 몸. 헤르미나와 묘하게 닮았으나 생기가 넘친다. 씁쓸한 머스크와 젖은 흙내음이 난다.
+                        잿빛 금발을 낮게 양갈래로 묶었고, 살짝 치켜올라간 매혹적인 붉은 눈동자를 가졌다. 아담하지만 육감적이고 건강한 몸. 헤르미나와 묘하게 닮았으나 생기가 넘친다. 씁쓸한 머스크와 젖은 흙내음이 난다.
                       </p>
                     </div>
                     <div>
